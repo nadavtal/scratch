@@ -10,7 +10,7 @@ var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'clash'
+    database: 'SCRATCH'
 });
 
 connection.connect(function(error) {
@@ -23,7 +23,7 @@ connection.connect(function(error) {
 
 app.get('/', function(rew, resp) {
     // about mysql
-    connection.query("SELECT * FROM accounts", function(error, row, fields) {
+    connection.query("SELECT * FROM profiles", function(error, row, fields) {
         // callback
         if(!!error) {
             console.log('query error');
@@ -33,4 +33,4 @@ app.get('/', function(rew, resp) {
         }
     })
 })
-app.listen(4200)
+app.listen(300)

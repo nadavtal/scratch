@@ -3,7 +3,7 @@
 
 <head>
 
-    <title>template page</title>
+    <title>homepage</title>
     <!-- Required meta tags always come first -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,16 +13,160 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
-    <link rel="stylesheet" href="./CSS/styless.css">
+    <link rel="stylesheet" href="./CSS/styles.css">
 
 </head>
 <body>
-<h1>hello world</h1>
+    
+    <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+        <div class='container'>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <img class="logo" src=''>
+            <div class="row collapse navbar-collapse " id="Navbar">
+                <div class="col-sm-9">
+                    <ul class="navbar-nav">
+                        <li class="navbar-text">
+                            <span class='fa fa-home' >
+                                <a routerLink="" [class.activated]="currentUrl == '/'">
+                                    home
+                                </a>
+                            </span>
+                        </li>
+                        <li class="navbar-text" id="upload-button" data-toggle="modal" data-target="#uploadpModal">
+                            <a href="profile.html"><span class='fa'>My profile</span></a>
+                        </li>
+                    </ul>
+                </div>
+        
+                <div class="col-sm-3">
+                    <ul id="loginMenu" class="navbar-nav">
+                        <li class="">
+                            <span class="navbar-text">
+                                <a class="" data-toggle="modal" data-target="#signUpModal">
+                                <span class="fa fa-sign-in"></span> Sign up</a>
+                            </span>
+                        </li>
+                        <li class="">
+                            <span class="navbar-text">
+                                <a class="" data-toggle="modal" data-target="#loginModal">
+                                <span class="fa fa-bolt"></span> Login</a>
+                                <span class="flex-spacer"></span>
+                            </span>
+                        </li>
+                    </ul>
+                    
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div id="loginModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="content">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Login </h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-sm-4">
+                                    <label class="sr-only" for="loginEmail">Email address</label>
+                                    <input type="email" class="form-control form-control-sm mr-1" id="loginEmail" placeholder="Enter email">
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label class="sr-only" for="loginPw">Password</label>
+                                <input type="password" class="form-control form-control-sm mr-1" id="loginPw" placeholder="Password">
+                            </div>
+                            <div class="col-sm-auto">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox">
+                                    <label class="form-check-label"> Remember me
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                            <button type="submit" id="loginButton" name="username" class="btn btn-success btn-sm ml-1"
+                                onsubmit="return false">
+                                <a href="profile.html">Login</a></button>
+                                    
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="signUpModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="content">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Sign up </h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-row">
+                            
+                            <div class="form-group col-sm-4">
+                                <label class="sr-only" for="inputfirstName">First name</label>
+                                <input type="text" class="form-control form-control-sm mr-1" id="inputfirstName" placeholder="Enter first name">
+                                <label class="sr-only" for="inputslastName">Last name</label>
+                                <input type="text" class="form-control form-control-sm mr-1" id="inputslastName" placeholder="Enter first name">
+                                <label class="sr-only" for="inputUserName">user name</label>
+                                <input type="text" class="form-control form-control-sm mr-1" id="inputUserName" placeholder="Enter user name">
+                                <label class="sr-only" for="inputEmail">email</label>
+                                <input type="email" class="form-control form-control-sm mr-1" id="inputEmail" placeholder="Enter email">
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label class="sr-only" for="inputPassword3">Password</label>
+                                <input type="password" class="form-control form-control-sm mr-1" id="inputPassword3" placeholder="Password">
+                            </div>
+                            <div class="col-sm-auto">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox">
+                                    <label class="form-check-label"> Remember me
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                            <button type="submit" id="signUpButton" class="btn btn-success btn-sm ml-1" onsubmit="">
+                                    Sign up</button>        
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<h1>Homepage</h1>
+<div class="row">
+    <div id="profiles" class="col-sm-4">
+        profiles
+        
+    </div>
+    <div id="scratches" class="col-sm-4">
+        scratches
+    </div>
+    <div id="matches" class="col-sm-4">
+        matches
+    </div>
+
+</div>
+
+
 
 
 <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
 <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="JS/main.js"></script>
+
 </body>
 </html>

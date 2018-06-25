@@ -1,0 +1,43 @@
+    <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+        <div class='container'>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <img class="logo" src=''>
+            <div class="row collapse navbar-collapse " id="Navbar">
+                <div class="col-sm-9">
+                    <ul class="navbar-nav">
+                        <li class="navbar-text">
+                            <span class='fa fa-home' >
+                                <a routerLink="" [class.activated]="currentUrl == '/'">
+                                    home
+                                </a>
+                            </span>
+                        </li>
+                        <li class="navbar-text" id="upload-button" data-toggle="modal" data-target="#uploadpModal">
+                            <span class='Upload fa fa-upload'>My profile</span>
+                        </li>
+                    </ul>
+                </div>
+        
+                <div class="col-sm-3">
+                    <ul id="loginMenu" class="navbar-nav">
+                        <li class="">
+                            <span class="navbar-text">
+                                <a class="" data-toggle="modal" data-target="#signUpModal">
+                                <span class="fa fa-sign-in"></span> Sign up</a>
+                            </span>
+                        </li>
+                        <li class="">
+                            <span class="navbar-text">
+                                <a class="" data-toggle="modal" data-target="#loginModal">
+                                <span class="fa fa-bolt"></span> Login</a>
+                                <span class="flex-spacer"></span>
+                            </span>
+                        </li>
+                    </ul>
+                    
+                </div>
+            </div>
+        </div>
+    </nav>
