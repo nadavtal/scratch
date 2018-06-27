@@ -1,0 +1,27 @@
+.scratchBox{
+    border: 1px solid black;
+    height: 400px;
+    
+}
+
+#scratchHeader{
+    /* border: 1px solid green; */
+    float: right;
+    font-size: 3em;
+    padding: 20px ;
+    
+}
+
+#scratchDesc{
+    /* border: 1px solid rgb(29, 28, 124); */
+    /* float: right; */
+    padding: 30px;
+    margin: 40px;
+}
+
+.scratchRate{
+    /* border: 1px solid yellow; */
+    padding: 30px;
+    margin: 40px;
+    
+}

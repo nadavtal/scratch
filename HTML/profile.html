@@ -10,10 +10,10 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
-    <link rel="stylesheet" href="./CSS/styles.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-social/bootstrap-social.css">
+    <link rel="stylesheet" href="../CSS/styles.css">
 
 </head>
 <body>
@@ -28,13 +28,20 @@
                     <ul class="navbar-nav">
                         <li class="navbar-text">
                             <span class='fa fa-home' >
-                                <a href="index.html">
+                                <a href="../index.html">
                                     home
                                 </a>
                             </span>
                         </li>
                         <li class="navbar-text" id="addScratch" data-toggle="modal" data-target="#addScratch">
+                            <a href="scratches.html"><span class='fa'>Scratches</span></a>
+                        </li>
+                        <li class="navbar-text" id="addScratch" data-toggle="modal" data-target="#addScratch">
                             <span class='fa'>add scratch</span>
+                            
+                        </li>
+                        <li class="navbar-text" id="addScratch" data-toggle="modal" data-target="#addScratch">
+                            
                             <span class='fa'>find scratches</span>
                         </li>
                     </ul>
@@ -64,9 +71,9 @@
 <div>
     header
 </div>
-<div>
+<div class=profileDetails"">
     details
-    <div>
+    <div class="info">
         basic info
         <div id="fullName">
 
@@ -75,18 +82,18 @@
             
         </div>
     </div>
-    <div id="scratchesProifile">
-        scratches
+    <div id="scratchesProfile">
+        scratches: 
     </div>
 </div>
-<div>
+<div id="relatedProfiles" class="relatedProfiles">
 
 </div>
 
 
-<script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
-<script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
-<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="JS/profile.js"></script>
+<script src="../node_modules/jquery/dist/jquery.slim.min.js"></script>
+<script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
+<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../JS/profile.js"></script>
 </body>
 </html>

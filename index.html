@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
     <link rel="stylesheet" href="./CSS/styles.css">
+    
 
 </head>
 <body>
@@ -35,7 +36,10 @@
                             </span>
                         </li>
                         <li class="navbar-text" id="upload-button" data-toggle="modal" data-target="#uploadpModal">
-                            <a href="profile.html"><span class='fa'>My profile</span></a>
+                            <a href="./HTML/profile.html"><span class='fa'>My profile</span></a>
+                        </li>
+                        <li class="navbar-text" id="addScratch" data-toggle="modal" data-target="#addScratch">
+                                <a href="./HTML/scratches.html"><span class='fa'>Scratches</span></a>
                         </li>
                     </ul>
                 </div>
@@ -92,8 +96,8 @@
                             <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
                             <button type="submit" id="loginButton" name="username" class="btn btn-success btn-sm ml-1"
                                 onsubmit="return false">
-                                <a href="profile.html">Login</a></button>
-                                    
+                                <a href="">Login</a></button>
+                                <!-- ./HTML/profile.html -->
                         </div>
                     </form>
                 </div>
@@ -147,15 +151,44 @@
     </div>
 <h1>Homepage</h1>
 <div class="row">
-    <div id="profiles" class="col-sm-4">
-        profiles
+    <div class="col-sm-4">
+        <h3>Profiles</h3>
+        <button type="button" id="maleButton">Male</button> 
+        <button type="button" id="femaleButton">Female</button> 
         
+        <div id="profiles" >
+            
+            
+        </div>
     </div>
-    <div id="scratches" class="col-sm-4">
-        scratches
+    <div class="col-sm-4">
+        <h3>Scratches</h3>
+        <button type="button" id="maleScrachButton">Male scratches</button>
+        <button type="button" id="femaleScrachButton">Female scratches</button>
+        <div id="scratches" class="">
+            <!-- <h2>scratches</h2>
+            <h3>gender</h3> 
+            <label class="container">male
+                <input type="checkbox" value="male" checked="checked">
+                <span class="checkmark"></span>
+            </label>
+                
+            <label class="container">female
+                <input type="checkbox" value="female">
+                <span class="checkmark"></span>
+            </label> -->
+        </div>
     </div>
     <div id="matches" class="col-sm-4">
-        matches
+        <h3>Find scratches</h3>
+        <select id="typeSelect">
+        </select>
+        <select id="subTypeSelect">
+        </select>
+        <button type="button" id="findScratchesButton">Find related scratches</button>
+        <div id="foundScratches">
+
+        </div>
     </div>
 
 </div>
@@ -167,6 +200,7 @@
 <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="JS/main.js"></script>
+<script src="JS/data.js"></script>
 
 </body>
 </html>

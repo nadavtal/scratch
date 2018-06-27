@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>homepage</title>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-social/bootstrap-social.css">
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="stylesheet" href="../CSS/scratches.css">
+
+</head>
+<body>
+    <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+        <div class='container'>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <img class="logo" src=''>
+            <div class="row collapse navbar-collapse " id="Navbar">
+                <div class="col-sm-9">
+                    <ul class="navbar-nav">
+                        <li class="navbar-text">
+                            <span class='fa fa-home' >
+                                <a href="../index.html">
+                                    home
+                                </a>
+                            </span>
+                        </li>
+                        <li class="navbar-text" id="">
+                            <a href="profile.html"><span class='fa'>My profile</span></a>
+                        </li>
+                        <li class="navbar-text" id="addScratch" data-toggle="modal" data-target="#addScratch">
+                            <span class='fa'>add scratch</span>
+                            
+                        </li>
+                        <li class="navbar-text" id="addScratch" data-toggle="modal" data-target="#addScratch">
+                            
+                            <span class='fa'>find scratches</span>
+                        </li>
+                    </ul>
+                </div>
+        
+                <div class="col-sm-3">
+                    <ul id="" class="navbar-nav">
+                        <li class="">
+                            <span class="navbar-text">
+                                <a class="" data-toggle="modal" data-target="">
+                                <span class="fa fa-contact"></span> Contact</a>
+                            </span>
+                        </li>
+                        <li class="">
+                            <span class="navbar-text">
+                                <a class="" data-toggle="modal" data-target="#loginModal">
+                                <span class="fa fa-bolt"></span> Logout</a>
+                                <span class="flex-spacer"></span>
+                            </span>
+                        </li>
+                    </ul>
+                    
+                </div>
+            </div>
+        </div>
+    </nav>
+<div>
+    
+</div>
+<div class="row">
+    <div class="col-12 col-md-6">
+        <div id="scratchBox" class="scratchBox">
+            <div id="scratch" class="scratch">
+                <h3>Scratch</h3>
+                <div id="scratchHeader">
+        
+                </div>
+                <div id="scratchDesc">
+        
+                </div>
+        
+            </div>
+            <div class="scratchRate">
+                <button id="havetooButton">I have that too<span id="havetooSpan"></span></button>
+                <button id="canliveButton">I can live with that<span id="canliveSpan"></span></button>
+                <button id="NopeButton">Nope! deal breaker<span id="NopeSpan"></span></button>
+                <!-- <button id="addButton">Add to my scratches<span id="NopeSpan"></span></button> -->
+            </div>
+            <div class="scratchComments">
+                <div class="comment">
+                    <div id="profileUsername">
+            
+                    </div>
+                    <div id="comment">
+            
+                    </div>
+                </div>
+        
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-md-6">
+        <h4>profiles with this scratch</h4>
+        <div id="relatedprofilesType" class="relatedprofilesType">
+        </div>
+    </div>
+
+</div>
+<div class="RelatedScratches">
+    <div class="row">
+        <div class="col-6">
+            <h4>related scratches by type</h4>
+            <div id="relatedScratchesType" class="relatedScratchesType">
+            </div>
+        </div>
+        <div class="col-6">
+            <h4>related scratches by subType</h4>
+            <div id="relatedScratchesSubtype" class="relatedScratchesSubtype">
+                
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="Relatedprofiles">
+    <div class="row">
+        
+        
+
+    </div>
+    
+</div>
+
+
+<script src="../node_modules/jquery/dist/jquery.slim.min.js"></script>
+<script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
+<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../JS/scratches.js"></script>
+</body>
+</html>
