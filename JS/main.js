@@ -100,9 +100,9 @@ var profiles = [
         { id: 2, type: typeBody, subType: crazySubType, header: "קיצי בגב", desc: "אני הופך לכלבלב", author: ""},
         { id: 3, type: typeHabbit, subType: freaksSubType, header: "אמאלה הריח", desc: "רגישות קשה לריחות", author: ""},
         
-        { id: 8, type: typeHabbit, subType: hateSubType, header: "להירדם עם טלוויזיה או מוסיקה", desc: "לא מצליחה להירדם עם משהו ברקע...", author: ""},
-        { id: 9, type: typeSoul, subType: hateSubType, header: "חפירות", desc: "פשוט לא מצליח לשרוד את זה", author: ""},
-        { id: 4, type: typeHabbit, subType: loveSubType, header: "להירדם עם טלוויזיה או מוסיקה", desc: "לא מצליחה להירדם בלי...", author: ""},
+        { id: 4, type: typeHabbit, subType: hateSubType, header: "נחירות", desc: "לא אפשרי לישון עם זה", author: ""},
+        { id: 5, type: typeSoul, subType: hateSubType, header: "בוקר חפירות", desc: "אין עם מי לדבר בבוקר", author: ""},
+        { id: 6, type: typeHabbit, subType: loveSubType, header: "להירדם עם טלוויזיה או מוסיקה", desc: "לא מצליחה להירדם בלי...", author: ""},
         sharedScratches[0],
         sharedScratches[3],
         sharedScratches[2],
@@ -122,14 +122,14 @@ var profiles = [
     birthDate: new Date,
     photos: [],
     scratches: [
-        { id: 5, type: typeBody, subType: hateSubType, header: "ריח פה", desc: "זה מגעיל אותי ברמות", author: ""},
-        { id: 6, type: typeHabbit, subType: freaksSubType, header: "לאכול בפה פתוח", desc: "מה אני צריך לראות את  התהליך הזה בפה שלך!!", author: ""},
+        { id: 7, type: typeBody, subType: hateSubType, header: "ריח פה", desc: "זה מגעיל אותי ברמות", author: ""},
+        { id: 8, type: typeHabbit, subType: freaksSubType, header: "לאכול בפה פתוח", desc: "מה אני צריך לראות את  התהליך הזה בפה שלך!!", author: ""},
         
-        { id: 11, type: typeHabbit, subType: freaksSubType, header: "ציפרוניים", desc: "כסיסת ציפורניים...איכססס", author: this.userName},
-        { id: 12, type: typeBody, subType: loveSubType, header: "מסאג' רגליים", desc: "מתמסרת כמו כלבלב קטן ומחזירה פינוק פי אלף", author: this.userName},
-        { id: 7, type: typeHabbit, subType: freaksSubType, header: "גירוד רגליים", desc: "מה אתם חופרים שם?? תנקו את זה!!", author: ""},
-        { id: 8, type: typeHabbit, subType: hateSubType, header: "להירדם עם טלוויזיה או מוסיקה", desc: "לא מצליחה להירדם עם משהו ברקע...", author: ""},
-        { id: 9, type: typeSoul, subType: hateSubType, header: "חפירות", desc: "פשוט לא מצליח לשרוד את זה", author: ""},
+        { id: 9, type: typeHabbit, subType: freaksSubType, header: "ציפרוניים", desc: "כסיסת ציפורניים...איכססס", author: ''},
+        { id: 10, type: typeBody, subType: loveSubType, header: "מסאג' רגליים", desc: "מתמסרת כמו כלבלב קטן ומחזירה פינוק פי אלף", author:''},
+        { id: 11, type: typeHabbit, subType: freaksSubType, header: "גירוד רגליים", desc: "מה אתם חופרים שם?? תנקו את זה!!", author: ""},
+        { id: 12, type: typeHabbit, subType: hateSubType, header: "להירדם עם טלוויזיה או מוסיקה", desc: "לא מצליחה להירדם עם משהו ברקע...", author: ""},
+        { id: 13, type: typeSoul, subType: hateSubType, header: "חפירות", desc: "פשוט לא מצליח לשרוד את זה", author: ""},
         sharedScratches[1],
         sharedScratches[3],
         sharedScratches[4],
@@ -148,10 +148,10 @@ var profiles = [
     birthDate: new Date,
     photos: [],
     scratches: [
-        { id: 10, type: typeSoul, subType: hateSubType, header: "שיחות על הבוקר", desc: "מוח לא עובד לפני 2 כוסות קפה", author: this.userName},
-        { id: 11, type: typeHabbit, subType: freaksSubType, header: "ציפרוניים", desc: "כסיסת ציפורניים...איכססס", author: this.userName},
-        { id: 12, type: typeBody, subType: loveSubType, header: "מסאג' רגליים", desc: "מתמסרת כמו כלבלב קטן ומחזירה פינוק פי אלף", author: this.userName},
-        { id: 13, type: typeSoul, subType: hateSubType, header: "צעקות", desc: "לא מבין איך זה תורם לשום דבר ורק יוצר עוד כעס", author: this.userName},
+        { id: 14, type: typeSoul, subType: hateSubType, header: "שיחות על הבוקר", desc: "מוח לא עובד לפני 2 כוסות קפה", author: ''},
+        { id: 15, type: typeHabbit, subType: freaksSubType, header: "ציפרוניים", desc: "כסיסת ציפורניים...איכססס", author: ''},
+        { id: 16, type: typeBody, subType: loveSubType, header: "מסאג' רגליים", desc: "מתמסרת כמו כלבלב קטן ומחזירה פינוק פי אלף", author: ''},
+        { id: 17, type: typeSoul, subType: hateSubType, header: "צעקות", desc: "לא מבין איך זה תורם לשום דבר ורק יוצר עוד כעס", author: ''},
         sharedScratches[0],
         sharedScratches[4],
         sharedScratches[5],
@@ -175,21 +175,26 @@ function getAllScratches(profileList) {
             group.push(profileList[i].scratches[j])
         }
     }
-    console.log('all scratches', group)
+    // console.log('all scratches', group)
     return group
 }
 var scratches = getAllScratches(profiles)
 localStorage.setItem('scratches',JSON.stringify(scratches))
 
 function getUniqueScratches(profileList) {
+    var idgroup = []
     var group = []
     for(i = 0; i<profileList.length; i++){
         for (j=0; j<profileList[i].scratches.length; j++){
-            if (!group.includes(profileList[i].scratches[j]))
-            group.push(profileList[i].scratches[j])
+            if (!idgroup.includes(profileList[i].scratches[j].id)){
+                 idgroup.push(profileList[i].scratches[j].id);
+                // console.log(idgroup)
+                group.push(profileList[i].scratches[j]);
+                // console.log(group)
+            }
         }
     }
-    console.log('unique scratches', group)
+    // console.log('unique scratches', group)
     return group
 }
 var uniqueScratches = getUniqueScratches(profiles)
@@ -234,16 +239,32 @@ function showScratches(list, targetElement){
     element.innerHTML = '';
     // alert('here')
     for (i = 0; i < list.length; i++){
-        var details = [list[i].type, list[i].subType, list[i].header, list[i].desc, list[i].author]
-        var div = document.createElement('div');
-        div.setAttribute('id', 'sc' + list[i].id);
-        console.log(div);
-        var a = document.createElement('a');
+        let details = [list[i].header + ' - ' + list[i].desc]
+        let row = document.createElement('div');
+        row.setAttribute('class','row scratchrow');
+        row.setAttribute('id', 'sc' + list[i].id);
+       
+        let colHeader = document.createElement('div');
+        colHeader.setAttribute('class', 'col-3 scratchHeader');
+        let a = document.createElement('a');
         a.setAttribute('href', './HTML/scratches.html');
-        a.innerHTML = details 
-        div.appendChild(a);
-        element.appendChild(div);
+        colHeader.appendChild(a)
+        a.innerHTML = list[i].header
+        
+        let coldesc = document.createElement('div');
+        coldesc.setAttribute('class', 'col-9 scratchDesc');
+        let a1 = document.createElement('a');
+        a1.setAttribute('href', './HTML/scratches.html');
+        coldesc.appendChild(a1)
+        a1.innerHTML = list[i].desc;
+
+        row.appendChild(coldesc);
+        row.appendChild(colHeader);
+        
+        element.appendChild(row);
+        
     }
+    // console.log(element)
 }
 showScratches(uniqueScratches, "scratches");
 
@@ -258,7 +279,7 @@ function showSlelectTypes(){
         element.appendChild(option);
     }
 }
-showSlelectTypes();
+// showSlelectTypes();
 
 
 function showSlelectSubTypes(){
@@ -270,7 +291,7 @@ function showSlelectSubTypes(){
         element.appendChild(option);
     }
 }
-showSlelectSubTypes();
+// showSlelectSubTypes();
 
 // alert(typeof(profiles[2].scratches[0].author))
 
@@ -338,21 +359,19 @@ function findProfilesByID(profileList, id){
 }
 
 function GetNum(str) {
-    var num = str.replace(/\D/g,'')
-    alert(typeof(num))
+    var num = str.replace(/\D/g,'');
     return(num);
-    }
-        
+}
 
 
 function findScratchByID(scratchList, id){
     var id = GetNum(id)
-    alert( id);
+    // alert( id);
     for (i = 0; i<scratchList.length; i++){
         // console.log(profileList[i].id);
-        console.log(scratchList[i].id)
+        // console.log(scratchList[i].id)
         if (scratchList[i].id == id){
-            console.log(scratchList[i]);
+            // console.log(scratchList[i]);
             return scratchList[i];
             break
         }   
@@ -419,13 +438,14 @@ function linkToProfile(list){
 linkToProfile(profiles);
 
 function linkToScratch(list){
+    // alert(list.length)
     for (i = 0; i<list.length; i++){
-        console.log('sc' + i);
+        // console.log('sc' + i);
         document.getElementById('sc'+ i).onclick = function(){
             var id  = $(this).attr("id");
-            alert('here')
+            // alert('here')
             var scratch = findScratchByID(scratches,id)
-            console.log(scratch);
+            // console.log(scratch);
             localStorage.setItem('scratch',JSON.stringify(scratch));
         }
     }
@@ -519,15 +539,13 @@ document.getElementById("femaleScrachButton").onclick = function(){
     // console.log(scratches);
     showScratches(femaleScratches, "scratches");
 }
-document.getElementById('findScratchesButton').onclick = function(){
-    var type = document.getElementById('typeSelect').value
-    var subType = document.getElementById('subTypeSelect').value
-    // alert(type)
-    // alert(subType)
-    var matchesType = findScratchMatchByType(scratches, type)
-    var matchesSubType = findScratchMatchBySubtype(matchesType, subType)
-    showScratches(matchesSubType, 'foundScratches')
-}
+// document.getElementById('findScratchesButton').onclick = function(){
+//     var type = document.getElementById('typeSelect').value
+//     var subType = document.getElementById('subTypeSelect').value
+//     var matchesType = findScratchMatchByType(uniqueScratches, type)
+//     var matchesSubType = findScratchMatchBySubtype(matchesType, subType)
+//     showScratches(matchesSubType, 'foundScratches')
+// }
 
 
 

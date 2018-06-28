@@ -1,6 +1,7 @@
 body{
     padding: 80px;
     z-index: 0;
+    
     }
 
 
@@ -10,7 +11,7 @@ h1{
 
 .navbar-dark{
     background-color: rgb(5, 5, 5);
-    border: 1px solid rgb(230, 142, 43);
+    /* border: 1px solid rgb(230, 142, 43); */
 }
 
 .navbar-nav{
@@ -19,4 +20,30 @@ h1{
 
 .navbar-text{
     padding: 10px
+}
+
+#scratches{
+    /* border: 1px solid rebeccapurple; */
+    /* text-align: right;  */
+}
+
+
+.row{
+    /* border: 3px solid purple; */
+}
+
+.scratchHeader{
+    text-align: right;
+    /* border: 1px solid rgb(29, 21, 12); */
+    float: right;
+}
+
+.scratchDesc{
+    /* border: 1px solid rgb(131, 23, 23); */
+    float: left;
+    text-align: right;
+}
+
+.scratchrow{
+    border-bottom: 1px solid lightcoral
 }
