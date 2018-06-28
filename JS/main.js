@@ -1,5 +1,5 @@
 $(document).ready(() => {
-localStorage.clear();
+// localStorage.clear();
 console.log("main file reloaded")
 
 //  import { profiles } from './data' 
@@ -81,7 +81,7 @@ function Profile(id, gender, fName, lName, userName, email, pw){
     this.photos = [];
     this.scratches = []
             
-    }
+}
 
 var profiles = [
     {
@@ -165,8 +165,9 @@ var profiles = [
 // alert(typeof(profiles))
 localStorage.setItem('profiles',JSON.stringify(profiles))
 
-
-
+function hello() {
+    return "Hello";
+}
 
 function getAllScratches(profileList) {
     var group = []
@@ -223,14 +224,53 @@ function showProfiles(list, targetElement){
         //     console.log(div)
         // }
         var a = document.createElement('a');
-        a.setAttribute('href', './HTML/profile.html');
+        a.setAttribute('href', 'http://localhost:3000/HTML/profile.html');
         a.innerHTML = userName ;
         div.appendChild(a);
         element.appendChild(div);
         // console.log(element)
     }
 }
-showProfiles(profiles, "profiles");
+
+function showProfilesWithScratch(id){
+    var group = findProfilesWithScratchID(id, profiles);
+    // console.log(group);
+    showProfiles(group, 'relatedprofilesType');
+    return group;
+}
+
+
+function showScratch(scratchObj){
+    var headerSource = document.getElementById('scratchHeader')
+    headerSource.innerHTML = scratchObj.header;
+    var descSource = document.getElementById('scratchDesc')
+    descSource.innerHTML = scratchObj.desc;
+    return scratchObj
+}
+
+
+function scratchButtons(){
+    document.getElementById('havetooButton').onclick = function(){
+        index++;
+        fillPageContent(index)
+    }
+    document.getElementById('canliveButton').onclick = function(){
+        index++;
+        fillPageContent(index)
+    }
+    document.getElementById('NopeButton').onclick = function(){
+        index++;
+        fillPageContent(index)
+    }
+}
+
+function fillPageContent(scratchObj){
+    var currentScratch = showScratch(scratchObj);
+    var id = currentScratch.id;
+    // alert(id);
+    var group = showProfilesWithScratch(id);
+    linkToProfile(group);
+}
 
 function showScratches(list, targetElement){
     // alert(typeof(targetElement))
@@ -247,14 +287,14 @@ function showScratches(list, targetElement){
         let colHeader = document.createElement('div');
         colHeader.setAttribute('class', 'col-3 scratchHeader');
         let a = document.createElement('a');
-        a.setAttribute('href', './HTML/scratches.html');
+        a.setAttribute('href', 'http://localhost:3000/HTML/scratches.html');
         colHeader.appendChild(a)
         a.innerHTML = list[i].header
         
         let coldesc = document.createElement('div');
         coldesc.setAttribute('class', 'col-9 scratchDesc');
         let a1 = document.createElement('a');
-        a1.setAttribute('href', './HTML/scratches.html');
+        a1.setAttribute('href', 'http://localhost:3000/HTML/scratches.html');
         coldesc.appendChild(a1)
         a1.innerHTML = list[i].desc;
 
@@ -264,9 +304,20 @@ function showScratches(list, targetElement){
         element.appendChild(row);
         
     }
-    // console.log(element)
+    console.log(element)
 }
-showScratches(uniqueScratches, "scratches");
+
+
+function showScratchesByType(scratch){
+    var group = findScratchMatchByType(scratches, scratch.type);
+    showScratches(group, 'relatedScratchesType')
+}
+
+
+function showScratchesBySubType(scratch){
+    var group = findScratchMatchBySubtype(scratches, scratch.subType);
+    showScratches(group, 'relatedScratchesSubtype')
+}
 
 function showSlelectTypes(){
     var element = document.getElementById("typeSelect")
@@ -279,7 +330,6 @@ function showSlelectTypes(){
         element.appendChild(option);
     }
 }
-// showSlelectTypes();
 
 
 function showSlelectSubTypes(){
@@ -291,22 +341,6 @@ function showSlelectSubTypes(){
         element.appendChild(option);
     }
 }
-// showSlelectSubTypes();
-
-// alert(typeof(profiles[2].scratches[0].author))
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 function getVariablesFromInput(id){
     // alert(id);
@@ -332,6 +366,20 @@ function findScratchMatchByType(list, value){
     return matches;
 }
 
+function findScratchMatchBySubtype(list, value){
+    console.log(value)
+    var matches = []
+    for (i = 0; i<list.length; i++){
+        // alert("here");
+        // console.log(list[i].type);
+        if (list[i].subType == value){
+            matches.push(list[i]);
+        }
+    }
+    console.log(matches);
+    return matches;
+}
+
 function findProfilesByScratch(profileList, scratch){
     var group = []
     for (i = 0; i<profileList.length; i++){
@@ -343,7 +391,27 @@ function findProfilesByScratch(profileList, scratch){
     // console.log(group);
     return group;
 }
-// findProfilesByScratch(profiles, scratches[6]);
+
+function findProfilesWithScratchID(id, profileList){
+    var group = []
+    // var id = scratch.id;
+
+    for (i = 0; i<profileList.length; i++){
+        
+        // console.log(profileList[i].scratches[0])
+        for (j=0; j<profileList[i].scratches.length; j++){
+            
+            // console.log(scratch.id)
+            // console.log(profileList[i].scratches[j].id)
+            if ( profileList[i].scratches[j].id == id){
+                // console.log('match');
+                group.push(profileList[i]);
+            }
+        }
+    }
+    return group
+    // console.log(group)
+}
 
 function findProfilesByID(profileList, id){
     
@@ -363,7 +431,6 @@ function GetNum(str) {
     return(num);
 }
 
-
 function findScratchByID(scratchList, id){
     var id = GetNum(id)
     // alert( id);
@@ -379,19 +446,6 @@ function findScratchByID(scratchList, id){
 }
  
 
-function findScratchMatchBySubtype(list, value){
-    console.log(value)
-    var matches = []
-    for (i = 0; i<list.length; i++){
-        // alert("here");
-        // console.log(list[i].type);
-        if (list[i].subType == value){
-            matches.push(list[i]);
-        }
-    }
-    console.log(matches);
-    return matches;
-}
 
 
 function findScratchMatchByKeywordHeader(list, value){
@@ -419,14 +473,13 @@ function genderProfiles(gender){
         // console.log(group)
         return group;
 }
-// genderProfiles('female')
 
 
 
 function linkToProfile(list){
     for (i = 0; i<list.length; i++){
         // alert('profile'+i)
-        document.getElementById(i).onclick = function(){
+        document.getElementById(list[i].id).onclick = function(){
             var id  = $(this).attr("id")
             
             var profile = findProfilesByID(list, id);
@@ -435,116 +488,184 @@ function linkToProfile(list){
         }
     }
 }
-linkToProfile(profiles);
+
 
 function linkToScratch(list){
     // alert(list.length)
     for (i = 0; i<list.length; i++){
-        // console.log('sc' + i);
-        document.getElementById('sc'+ i).onclick = function(){
+        
+        document.getElementById('sc'+ list[i].id).onclick = function(){
             var id  = $(this).attr("id");
-            // alert('here')
-            var scratch = findScratchByID(scratches,id)
+            let selectedScratch = findScratchByID(scratches,id)
+            // alert(selectedScratch.id)
             // console.log(scratch);
-            localStorage.setItem('scratch',JSON.stringify(scratch));
+            localStorage.setItem('selectedScratch',JSON.stringify(selectedScratch));
+            // alert(scratch.id);
+            return selectedScratch
         }
     }
 }
-linkToScratch(uniqueScratches);
 
 
-document.getElementById('signUpButton').onclick = function(e){
+
+if(window.location.href === "http://localhost:3000/index.html") {
+    // alert('http://localhost:3000/index.html')
+    showProfiles(profiles, "profiles");
+
+    showScratches(uniqueScratches, "scratches");
+
+    linkToProfile(profiles);
     
-    // alert("here");
-    var first = getVariablesFromInput('inputfirstName');
-    var last = getVariablesFromInput('inputslastName');
-    var userName = getVariablesFromInput('inputUserName');
-    var email = getVariablesFromInput('inputEmail');
-    var pw = getVariablesFromInput('inputPassword3');
-    var newProfile = new Profile(first, last, userName, email, pw);
-    // alert("here2");
-    alert(newProfile);
-    // localStorage.setItem('user', newUser);
-    // localStorage.setItem('first', first);
-    // localStorage.setItem('last', last);
-    // localStorage.setItem('email', email);
-    // localStorage.setItem('pw', pw);
-    // localStorage.setItem('wins', 0);
-    // localStorage.setItem('losses', 0);
-    // localStorage.setItem('balance', 0);
-    // profiles.push(newProfile);
-    // localStorage.setItem('user',JSON.stringify(newProfile));
-    console.table(profiles);
+
+    linkToScratch(uniqueScratches);
+
+
+    document.getElementById('signUpButton').onclick = function(e){
     
-    
-}
-
-
-document.getElementById('loginButton').onclick = function(e){
-    // e.preventDefault();
-    var email = getVariablesFromInput('loginEmail');
-    var pw = getVariablesFromInput('loginPw');
-
-    if (email === ''){
-        alert("please enter email")
+        // alert("here");
+        var first = getVariablesFromInput('inputfirstName');
+        var last = getVariablesFromInput('inputslastName');
+        var userName = getVariablesFromInput('inputUserName');
+        var email = getVariablesFromInput('inputEmail');
+        var pw = getVariablesFromInput('inputPassword3');
+        var newProfile = new Profile(first, last, userName, email, pw);
+        // alert("here2");
+        alert(newProfile);
+        // localStorage.setItem('user', newUser);
+        // localStorage.setItem('first', first);
+        // localStorage.setItem('last', last);
+        // localStorage.setItem('email', email);
+        // localStorage.setItem('pw', pw);
+        // localStorage.setItem('wins', 0);
+        // localStorage.setItem('losses', 0);
+        // localStorage.setItem('balance', 0);
+        // profiles.push(newProfile);
+        // localStorage.setItem('user',JSON.stringify(newProfile));
+        console.table(profiles);
+        
+        
     }
-    for (i = 0; i < profiles.length; i++){
-        alert(profiles[i].email);
-        if (email === profiles[i].email){
-            // alert(users[i].email)
-            if (pw === profiles[i].pw){
-                // alert(users[i].pw)
-                var profile = profiles[i]
-                break
-            }
-            else{
-                alert("pass word doesnt match the email")
+    
+    
+    document.getElementById('loginButton').onclick = function(e){
+        // e.preventDefault();
+        var email = getVariablesFromInput('loginEmail');
+        var pw = getVariablesFromInput('loginPw');
+    
+        if (email === ''){
+            alert("please enter email")
+        }
+        for (i = 0; i < profiles.length; i++){
+            alert(profiles[i].email);
+            if (email === profiles[i].email){
+                // alert(users[i].email)
+                if (pw === profiles[i].pw){
+                    // alert(users[i].pw)
+                    var profile = profiles[i]
+                    break
                 }
-        }else{
-            alert("Email doesn't exist")
-            }
+                else{
+                    alert("pass word doesnt match the email")
+                    }
+            }else{
+                alert("Email doesn't exist")
+                }
+        }
+        alert(profile.scratches);
+        // alert(profile.firstName);
+        localStorage.setItem('profile',JSON.stringify(profile));
+       
     }
-    alert(profile.scratches);
-    // alert(profile.firstName);
-    localStorage.setItem('profile',JSON.stringify(profile));
-   
+    
+    
+    document.getElementById("maleButton").onclick = function(){
+        var maleProfiles = genderProfiles('male');
+        showProfiles(maleProfiles, 'profiles')
+    }
+    
+    document.getElementById("femaleButton").onclick = function(){
+        var femaleProfiles = genderProfiles('female');
+        showProfiles(femaleProfiles, 'profiles')
+    }
+    
+    document.getElementById("maleScrachButton").onclick = function(){
+        var maleProfiles = genderProfiles('male');
+        // console.log(maleProfiles);
+        var maleScratches = getAllScratches(maleProfiles);
+        // console.log(maleScratches);
+        // console.log(scratches);
+        showScratches(maleScratches, "scratches");
+    }
+    
+    
+    document.getElementById("femaleScrachButton").onclick = function(){
+        var femaleProfiles = genderProfiles('female');
+        // console.log(maleProfiles);
+        var femaleScratches = getAllScratches(femaleProfiles);
+        // console.log(maleScratches);
+        // console.log(scratches);
+        showScratches(femaleScratches, "scratches");
+    }
+
+
+    
+    
+    
+
+}
+
+if(window.location.href === "http://localhost:3000/HTML/scratches.html") {
+
+    var selectedScratch = JSON.parse(localStorage.getItem('selectedScratch'))
+    // alert(selectedScratch.id);
+    showSlelectTypes();
+
+    showSlelectSubTypes();
+
+    fillPageContent(selectedScratch)
+
+    scratchButtons()
+
+    document.getElementById('findScratchesButton').onclick = function(){
+    
+        var type = document.getElementById('typeSelect').value
+        var subType = document.getElementById('subTypeSelect').value
+        // alert(type)
+        // alert(subType)
+        var matchesType = findScratchMatchByType(uniqueScratches, type)
+        var matchesSubType = findScratchMatchBySubtype(matchesType, subType)
+        // console.log(matchesSubType)
+        showScratches(matchesSubType, 'foundScratches')
+        linkToScratch(matchesSubType);
+    }
+    
+    
+
 }
 
 
-document.getElementById("maleButton").onclick = function(){
-    var maleProfiles = genderProfiles('male');
-    showProfiles(maleProfiles, 'profiles')
-}
-
-document.getElementById("femaleButton").onclick = function(){
-    var femaleProfiles = genderProfiles('female');
-    showProfiles(femaleProfiles, 'profiles')
-}
-
-document.getElementById("maleScrachButton").onclick = function(){
-    var maleProfiles = genderProfiles('male');
-    // console.log(maleProfiles);
-    var maleScratches = getAllScratches(maleProfiles);
-    // console.log(maleScratches);
-    // console.log(scratches);
-    showScratches(maleScratches, "scratches");
-}
 
 
-document.getElementById("femaleScrachButton").onclick = function(){
-    var femaleProfiles = genderProfiles('female');
-    // console.log(maleProfiles);
-    var femaleScratches = getAllScratches(femaleProfiles);
-    // console.log(maleScratches);
-    // console.log(scratches);
-    showScratches(femaleScratches, "scratches");
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // document.getElementById('findScratchesButton').onclick = function(){
-//     var type = document.getElementById('typeSelect').value
-//     var subType = document.getElementById('subTypeSelect').value
-//     var matchesType = findScratchMatchByType(uniqueScratches, type)
-//     var matchesSubType = findScratchMatchBySubtype(matchesType, subType)
-//     showScratches(matchesSubType, 'foundScratches')
+    // var type = document.getElementById('typeSelect').value
+    // var subType = document.getElementById('subTypeSelect').value
+    // var matchesType = findScratchMatchByType(uniqueScratches, type)
+    // var matchesSubType = findScratchMatchBySubtype(matchesType, subType)
+    // showScratches(matchesSubType, 'foundScratches')
 // }
 
 

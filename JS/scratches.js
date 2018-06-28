@@ -1,5 +1,6 @@
 $(document).ready(() => {
 
+
 console.log("scratches.js loaded");
 
 var scratches = JSON.parse(localStorage.getItem('scratches'))
@@ -125,7 +126,7 @@ function findProfilesWithScratchID(id, profileList){
     return group
     // console.log(group)
 }
-findProfilesWithScratchID(11, profiles)
+
 
 function showScratches(list, targetElement){
     // alert(typeof(targetElement))
