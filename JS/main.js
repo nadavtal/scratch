@@ -482,9 +482,9 @@ function linkToProfile(list){
         document.getElementById(list[i].id).onclick = function(){
             var id  = $(this).attr("id")
             
-            var profile = findProfilesByID(list, id);
+            var selectedProfile = findProfilesByID(list, id);
             // console.log(profile);
-            localStorage.setItem('profile',JSON.stringify(profile));
+            localStorage.setItem('selectedProfile',JSON.stringify(selectedProfile));
         }
     }
 }
@@ -507,6 +507,16 @@ function linkToScratch(list){
 }
 
 
+function fillInfo(source, info){
+    document.getElementById(source).innerHTML = info
+}
+
+function displayFullName(profile, targetElement){
+    // alert(profile.id);
+    var fullName = document.getElementById(targetElement);
+    fullName.innerHTML = profile.firstName + " " + profile.lastName;
+    
+}
 
 if(window.location.href === "http://localhost:3000/index.html") {
     // alert('http://localhost:3000/index.html')
@@ -643,6 +653,17 @@ if(window.location.href === "http://localhost:3000/HTML/scratches.html") {
 
 }
 
+
+if(window.location.href === "http://localhost:3000/HTML/profile.html") {
+
+    
+    var selectedProfile = JSON.parse(localStorage.getItem('selectedProfile'));
+    console.log(selectedProfile);
+    displayFullName(selectedProfile, "fullName");
+    let scratchList = selectedProfile.scratches;
+    showScratches(scratchList, 'scratchesProfile')
+
+}
 
 
 
