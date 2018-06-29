@@ -35,7 +35,7 @@
                                 </a>
                             </span>
                         </li>
-                        <li class="navbar-text" id="upload-button" data-toggle="modal" data-target="#uploadpModal">
+                        <li class="navbar-text" id="" >
                             <a href="./HTML/profile.html"><span class='fa'>My profile</span></a>
                         </li>
                         <li class="navbar-text" id="addScratch" data-toggle="modal" data-target="#addScratch">
@@ -151,13 +151,37 @@
     </div>
 
 <div class="row">
-    <div class="col-sm-4">
+    <div class="col-sm-8">
         <h3>Profiles</h3>
         <button type="button" id="maleButton">Male</button> 
         <button type="button" id="femaleButton">Female</button> 
         
         <div id="profiles" >
-            
+            <div id="mycarousel" class="carousel slide" data-ride="carousel">
+                <div id="carousel-inner" class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <!-- <canvas> -->
+                            <img id="carouselImg1" class="d-block img-fluid" src="" alt="header1">
+                        <!-- </canvas> -->
+                        <!-- <div class="carousel-caption d-none d-md-block">
+                            <h2>The is the best 1<span class="badge badge-success">BEST!</span></h2>
+                            adfhlasdhfnf aldjf alsdjfnasd f lajdfa slasdffa sdkf ala
+                        </div> -->
+                    </div>
+                    
+                </div>
+                <ol class="carousel-indicators">
+                    <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#mycarousel" data-slide-to="1"></li>
+                    <li data-target="#mycarousel" data-slide-to="2"></li>
+                </ol>
+                <a class="carousel-control-prev" href="#mycarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+            </div>
             
         </div>
     </div>
@@ -180,17 +204,7 @@
             </div> -->
         </div>
     </div>
-    <!-- <div id="matches" class="col-sm-4">
-        <h3>Find scratches</h3>
-        <select id="typeSelect">
-        </select>
-        <select id="subTypeSelect">
-        </select>
-        <button type="button" id="findScratchesButton">Find related scratches</button>
-        <div id="foundScratches">
-
-        </div>
-    </div> -->
+    
 
 </div>
 

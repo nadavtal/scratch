@@ -5,12 +5,6 @@ console.log("profile.js loaded")
 var profile = JSON.parse(localStorage.getItem('profile'));
 
 
-function getAge(){
-    var birthYear = profile.birthDate;
-    // alert(birthYear)
-}
-getAge();
-
 
 function fillInfo(source, info){
     document.getElementById(source).innerHTML = info
@@ -19,12 +13,12 @@ function fillInfo(source, info){
 // alert(profile.email)
 
 
-function displayData(){
+function displayFullName(){
     var fullName = document.getElementById("fullName");
     fullName.innerHTML = profile.firstName + " " + profile.lastName;
     
 }
-displayData();
+
 
 function showScratches(){
     var list = profile.scratches

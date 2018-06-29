@@ -48,7 +48,7 @@
                     </ul>
                 </div>
         
-                <div class="col-sm-3">
+                <div class="col-sm-2">
                     <ul id="" class="navbar-nav">
                         <li class="">
                             <span class="navbar-text">
@@ -76,7 +76,7 @@
     <div class="col-12 col-md-6">
         <div id="scratchBox" class="scratchBox">
             <div id="scratch" class="scratch">
-                <h3>Scratch</h3>
+                <!-- <h2>Scratch</h2> -->
                 <div id="scratchHeader">
         
                 </div>
@@ -85,43 +85,167 @@
                 </div>
         
             </div>
-            <div class="scratchRate">
-                <button id="havetooButton">I have that too<span id="havetooSpan"></span></button>
-                <button id="canliveButton">I can live with that<span id="canliveSpan"></span></button>
-                <button id="NopeButton">Nope! deal breaker<span id="NopeSpan"></span></button>
+            <div class=" row scratchRate">
+                <div class="col-4 ">
+                    <button class="rateButton" id="canliveButton">I like that<br>
+                        <span id="canliveSpan"></span></button>
+                </div>
+                <div class="col-4">
+                    <button class="rateButton" id="havetooButton">I have that too!!! (add to profile)<br>
+                        <span id="havetooSpan"></span></button>
+                </div>
+                <div class="col-4">
+                    <button class="rateButton" id="NopeButton">Nope! deal breaker<br>
+                        <span id="NopeSpan"></span></button>
+                </div>
                 <!-- <button id="addButton">Add to my scratches<span id="NopeSpan"></span></button> -->
             </div>
+            <div class="scratchStats">
+                <div class="row">
+                    <div class="col-2 stat">
+                        
+                            <div id="genPercentage" class="statData">
+                    
+                            </div>
+                            <div class="statTitle">
+                                of all scratches
+                            </div>
+                        
+                    </div>
+                    <div class="col-2 stat">
+                        
+                            <div id="malePercentage" class="statData">
+                    
+                            </div>
+                            <div class="statTitle">
+                                of all male scratches
+                            </div>
+                        
+                    </div>
+                    <div class="col-2 stat">
+                        
+                            <div id="femalePercentage" class="statData">
+                    
+                            </div>
+                            <div class="statTitle">
+                                of all female scratches
+                            </div>
+                        
+                    </div>
+                    <div class="col-2 stat">
+                        
+                            <div id="profilesWithScratch" class="statData">
+                    
+                            </div>
+                            <div class="statTitle">
+                                poeple have this scratch
+                            </div>
+                        
+                    </div>
+                    <div class="col-2 stat">
+                        
+                            <div id="maleprofilesWithScratch" class="statData">
+                    
+                            </div>
+                            <div class="statTitle">
+                                males have this scratch
+                            </div>
+                        
+                    </div>
+                    <div class="col-2 stat">
+                        
+                            <div id="femaleProfilesWithScratch" class="statData">
+                    
+                            </div>
+                            <div class="statTitle">
+                                females have this scratch
+                            </div>
+                        
+                    </div>
+                </div>
+        
+            </div>
             <div class="scratchComments">
-                <div class="comment">
+                <!-- <div class="comment">
                     <div id="profileUsername">
             
                     </div>
                     <div id="comment">
             
                     </div>
-                </div>
+                </div> -->
         
             </div>
         </div>
     </div>
     <div class="col-12 col-md-6">
-        <h4>profiles with this scratch</h4>
-        <div id="relatedprofilesType" class="relatedprofilesType">
-        </div>
+        
         <div id="matches" class="">
-        <h3>Find scratches</h3>
-        <select id="typeSelect">
-        </select>
-        <select id="subTypeSelect">
-        </select>
-        <button type="button" id="findScratchesButton">Find related scratches</button>
-        <div id="foundScratches">
+            <h2>Find scratches</h2>
+            <select id="typeSelect">
+            </select>
+            <select id="subTypeSelect">
+            </select>
+            <button type="button" id="findScratchesButton">Find related scratches</button>
+            <div id="foundScratches">
 
+            </div>
         </div>
     </div>
-    </div>
-    
 </div>
+<div class="row">
+    <h4>profiles with this scratch</h4>
+    <!-- <div class="col-sm-2">
+        <img id="pic1" class="scratchProfilePic">
+    </div>
+    <div class="col-sm-2">
+        <img id="pic2" class="image-fluid">
+    </div>
+    <div class="col-sm-2">
+        <img id="pic3" class="image-fluid">
+    </div> -->
+    <div id="relatedprofilesType" class="relatedprofilesType">
+        <div id="mycarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active">
+                    <!-- <canvas> -->
+                        <img id="carouselImg1" class="d-block img-fluid" src="" alt="header1">
+                    <!-- </canvas> -->
+                    <!-- <div class="carousel-caption d-none d-md-block">
+                        <h2>The is the best 1<span class="badge badge-success">BEST!</span></h2>
+                        adfhlasdhfnf aldjf alsdjfnasd f lajdfa slasdffa sdkf ala
+                    </div> -->
+                </div>
+                <div class="carousel-item">
+                    <img id="carouselImg2" class="d-block img-fluid" src="" alt="header2">
+                    <!-- <div class="carousel-caption d-none d-md-block">
+                        <h2>The is the best 2<span class="badge badge-success">BEST!</span></h2>
+                        adfhlasdhfnf aldjf alsdjfnasd f lajdfa slasdffa sdkf ala
+                    </div> -->
+                </div>
+                <div class="carousel-item">
+                    <img id="carouselImg3" class="d-block img-fluid" src="" alt="header3">
+                    <!-- <div class="carousel-caption d-none d-md-block">
+                        <h2>The is the best 3<span class="badge badge-success">BEST!</span></h2>
+                        adfhlasdhfnf aldjf alsdjfnasd f lajdfa slasdffa sdkf ala
+                    </div> -->
+                </div>
+            </div>
+            <ol class="carousel-indicators">
+                <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#mycarousel" data-slide-to="1"></li>
+                <li data-target="#mycarousel" data-slide-to="2"></li>
+            </ol>
+            <a class="carousel-control-prev" href="#mycarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+    </div>
+</div>
+
 <!-- <div class="RelatedScratches">
     <div class="row">
         <div class="col-6">

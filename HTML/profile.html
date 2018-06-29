@@ -17,77 +17,121 @@
 
 </head>
 <body>
-    <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
-        <div class='container'>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <img class="logo" src=''>
-            <div class="row collapse navbar-collapse " id="Navbar">
-                <div class="col-sm-9">
-                    <ul class="navbar-nav">
-                        <li class="navbar-text">
-                            <span class='fa fa-home' >
-                                <a href="../index.html">
-                                    home
-                                </a>
-                            </span>
-                        </li>
-                        <li class="navbar-text" id="addScratch" data-toggle="modal" data-target="#addScratch">
-                            <a href="scratches.html"><span class='fa'>Scratches</span></a>
-                        </li>
-                        <li class="navbar-text" id="addScratch" data-toggle="modal" data-target="#addScratch">
-                            <span class='fa'>add scratch</span>
-                            
-                        </li>
-                        <li class="navbar-text" id="addScratch" data-toggle="modal" data-target="#addScratch">
-                            
-                            <span class='fa'>find scratches</span>
-                        </li>
-                    </ul>
-                </div>
-        
-                <div class="col-sm-3">
-                    <ul id="" class="navbar-nav">
-                        <li class="">
-                            <span class="navbar-text">
-                                <a class="" data-toggle="modal" data-target="">
-                                <span class="fa fa-contact"></span> Contact</a>
-                            </span>
-                        </li>
-                        <li class="">
-                            <span class="navbar-text">
-                                <a class="" data-toggle="modal" data-target="#loginModal">
-                                <span class="fa fa-bolt"></span> Logout</a>
-                                <span class="flex-spacer"></span>
-                            </span>
-                        </li>
-                    </ul>
-                    
-                </div>
+<nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+    <div class='container'>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <img class="logo" src=''>
+        <div class="row collapse navbar-collapse " id="Navbar">
+            <div class="col-sm-9">
+                <ul class="navbar-nav">
+                    <li class="navbar-text">
+                        <span class='fa fa-home' >
+                            <a href="../index.html">
+                                home
+                            </a>
+                        </span>
+                    </li>
+                    <li class="navbar-text" id="" >
+                        <a href="./HTML/profile.html"><span class='fa'>My profile</span></a>
+                    </li>
+                    <li class="navbar-text" id="" data-toggle="">
+                        <a href="scratches.html"><span class='fa'>Scratches</span></a>
+                    </li>
+                    <li class="navbar-text" id="" data-toggle="modal" data-target="#addScratch">
+                        <span class='fa'>add scratch</span>
+                        
+                    </li>
+                    <li class="navbar-text" id="" data-toggle="modal" data-target="#addScratch">
+                        
+                        <span class='fa'>find scratches</span>
+                    </li>
+                </ul>
+            </div>
+    
+            <div class="col-sm-3">
+                <ul id="" class="navbar-nav">
+                    <li class="">
+                        <span class="navbar-text">
+                            <a class="" data-toggle="modal" data-target="">
+                            <span class="fa fa-contact"></span> Contact</a>
+                        </span>
+                    </li>
+                    <li class="">
+                        <span class="navbar-text">
+                            <a class="" data-toggle="modal" data-target="#loginModal">
+                            <span class="fa fa-bolt"></span> Logout</a>
+                            <span class="flex-spacer"></span>
+                        </span>
+                    </li>
+                </ul>
+                
             </div>
         </div>
-    </nav>
-<div>
-    header
-</div>
-<div class=profileDetails"">
-    details
-    <div class="info">
-        basic info
-        <div id="fullName">
-
-        </div>
+    </div>
+</nav>
+<div class="row">
+    <div class="col-sm-6">
+        <h2>
+            <div id="fullName">
+    
+            </div>
+        </h2>
         <div id="age">
             
         </div>
+        <div class=profileDetails"">
+            
+            <div id="mycarousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <!-- <canvas> -->
+                            <img id="carouselImg1" class="d-block img-fluid" src="" alt="header1">
+                        <!-- </canvas> -->
+                        <!-- <div class="carousel-caption d-none d-md-block">
+                            <h2>The is the best 1<span class="badge badge-success">BEST!</span></h2>
+                            adfhlasdhfnf aldjf alsdjfnasd f lajdfa slasdffa sdkf ala
+                        </div> -->
+                    </div>
+                    <div class="carousel-item">
+                        <img id="carouselImg2" class="d-block img-fluid" src="" alt="header2">
+                        <!-- <div class="carousel-caption d-none d-md-block">
+                            <h2>The is the best 2<span class="badge badge-success">BEST!</span></h2>
+                            adfhlasdhfnf aldjf alsdjfnasd f lajdfa slasdffa sdkf ala
+                        </div> -->
+                    </div>
+                    <div class="carousel-item">
+                        <img id="carouselImg3" class="d-block img-fluid" src="" alt="header3">
+                        <!-- <div class="carousel-caption d-none d-md-block">
+                            <h2>The is the best 3<span class="badge badge-success">BEST!</span></h2>
+                            adfhlasdhfnf aldjf alsdjfnasd f lajdfa slasdffa sdkf ala
+                        </div> -->
+                    </div>
+                </div>
+                <ol class="carousel-indicators">
+                    <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#mycarousel" data-slide-to="1"></li>
+                    <li data-target="#mycarousel" data-slide-to="2"></li>
+                </ol>
+                <a class="carousel-control-prev" href="#mycarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+            </div>
+        </div>
     </div>
-    <div id="scratchesProfile">
-        scratches: 
+    <div class="col-sm-6">
+        <div id="scratchesProfile">
+            scratches: 
+        </div>
+        <div id="relatedProfiles" class="relatedProfiles">
+        
+        </div>
     </div>
-</div>
-<div id="relatedProfiles" class="relatedProfiles">
-
+    
 </div>
 
 
