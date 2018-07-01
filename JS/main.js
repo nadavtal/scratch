@@ -2,8 +2,6 @@ $(document).ready(() => {
 // localStorage.clear();
 // console.log("main file reloaded")
 
-//  import { profiles } from './data' 
-
 // console.table(profiles)
 
 var genders = ["male", "female"]
@@ -45,35 +43,6 @@ function Scratch(id, type, subType, label, header, desc, level, author){
     this.author = author
 } 
 
-var sharedScratches = [
-    { id: 0, type: typeHabbit, subType: freaksSubType, header: "קמצנות", desc: "זה אומר הכל על האישיות של הבן אדם", author: "", likes: 34, dislikes: 23},
-    { id: 1, type: typeBody, subType: hateSubType, header: "אוי רגליים", desc: "לא סובל שנוגעים לי ברגליים", author: "", likes: 45, dislikes: 23},
-    { id: 2, type: typeBody, subType: crazySubType, header: "קיצי בגב", desc: "אני הופך לכלבלב", author: "", likes: 14, dislikes: 12},
-    { id: 3, type: typeHabbit, subType: freaksSubType, header: "אמאלה הריח", desc: "רגישות קשה לריחות", author: "", likes: 25, dislikes: 34},
-    { id: 4, type: typeHabbit, subType: hateSubType, header: "נחירות", desc: "לא אפשרי לישון עם זה", author: "", likes: 12, dislikes: 35},
-    { id: 5, type: typeSoul, subType: hateSubType, header: "בוקר חפירות", desc: "אין עם מי לדבר בבוקר", author: "", likes: 23, dislikes: 56},
-    { id: 6, type: typeHabbit, subType: loveSubType, header: "להירדם עם טלוויזיה או מוסיקה", desc: "לא מצליחה להירדם בלי...", author: "", likes: 34, dislikes: 23},
-    { id: 7, type: typeBody, subType: hateSubType, header: "ריח פה", desc: "זה מגעיל אותי ברמות", author: "", likes: 23, dislikes: 54},
-    { id: 8, type: typeHabbit, subType: freaksSubType, header: "לאכול בפה פתוח", desc: "מה אני צריך לראות את  התהליך הזה בפה שלך!!", author: "", likes: 78, dislikes: 45},
-    { id: 9, type: typeHabbit, subType: freaksSubType, header: "ציפרוניים", desc: "ציפורניים ארוכות לגברים??? ", author: '', likes: 34, dislikes: 56},
-    { id: 10, type: typeBody, subType: loveSubType, header: "מסאג' רגליים", desc: "מוריד ממני את כל לחצי היום!", author:'', likes: 23, dislikes: 54},
-    { id: 11, type: typeHabbit, subType: freaksSubType, header: "גירוד רגליים", desc: "מה אתם חופרים שם?? תנקו את זה!!", author: "", likes: 0, dislikes: 34},
-    { id: 12, type: typeHabbit, subType: hateSubType, header: "להירדם עם טלוויזיה או מוסיקה", desc: "לא מצליחה להירדם עם משהו ברקע...", author: "", likes: 24, dislikes: 45},
-    { id: 13, type: typeSoul, subType: hateSubType, header: "חפירות", desc: "פשוט לא מצליח לשרוד את זה", author: "", likes: 46, dislikes: 24},
-    { id: 14, type: typeSoul, subType: crazySubType, header: "שיחות על הבוקר", desc: "מוח לא עובד לפני 2 כוסות קפה", author: '', likes: 66, dislikes: 44},
-    { id: 15, type: typeHabbit, subType: freaksSubType, header: "ציפרוניים", desc: "כסיסת ציפורניים...איכססס", author: '', likes: 34, dislikes: 57},
-    { id: 16, type: typeHabbit, subType: crazySubType, header: "לאכול בפה פתוח", desc: "מה אני צריך לראות את  התהליך הזה בפה שלך!!", author: "", likes: 34, dislikes: 36},
-    { id: 17, type: typeHabbit, subType: freaksSubType, header: "ריח רגליים", desc: "לא יכול לסבול את זה!!", author: "", likes: 26, dislikes: 36},
-    { id: 18, type: typeSoul, subType: hateSubType, header: "שיחות על הבוקר", desc: "מוח לא עובד לפני 2 כוסות קפה", author: "", likes: 45, dislikes: 67},
-    { id: 19, type: typeHabbit, subType: freaksSubType, header: "זקנים", desc: "זה מגרד ונראה ממש מוזר", author: "", likes: 67, dislikes: 35},
-    { id: 20, type: typeBody, subType: loveSubType, header: "ליטוף בשיער", desc: "אפשר לפתור הכל עם קצת ליטופי שיער", author: "", likes: 26, dislikes: 34},
-    { id: 21, type: typeSoul, subType: crazySubType, header: "נדנודים", desc: "לא צריך להגיד לי כל כמה דקות מה נסגר", author: "", likes: 24, dislikes: 87},
-    { id: 22, type: typeBody, subType: loveSubType, header: "מסאג' רגליים", desc: "מתמסרת כמו כלבלב קטן ומחזירה פינוק פי אלף", author: '', likes: 65, dislikes: 45},
-    { id: 23, type: typeSoul, subType: hateSubType, header: "צעקות", desc: "לא מבין איך זה תורם לשום דבר ורק יוצר עוד כעס", author: '', likes: 54, dislikes: 45},
-    { id: 24, type: typeHabbit, subType: hateSubType, header: "קמצנות", desc: "זה מוריד לי ברמות", author: "", likes: 34, dislikes: 25},
-    { id: 24, type: typeBody, subType: hateSubType, header: "ריח זיעה בגוף", desc: "זה מגעיל אותי ומוריד לי כל חשק", author: "", likes: 56, dislikes: 67},
-]
-// localStorage.setItem('sharedScratches',JSON.stringify(sharedScratches))
 
 
 
@@ -104,225 +73,24 @@ function Profile(id, gender, fName, lName, userName, email, pw){
             
 }
 
-// var profiles = [
-//     {
-//     id: 0,
-//     gender: "male",
-//     firstName: "Gadi",
-//     lastName: "Gross",
-//     pw: "123",
-//     userName: "gads",
-//     email: "gadi@gmail.com",
-//     birthDate: new Date,
-//     photos: ['../images/male.jpg', '../images/male2.jpg', '../images/male3.jpg'],
-//     scratches: [
-//         sharedScratches[0],
-//         sharedScratches[3],
-//         sharedScratches[2],
-//         sharedScratches[5],
-//         sharedScratches[4],
-//         sharedScratches[11],
-//         sharedScratches[10],
-//         sharedScratches[20],
-//         sharedScratches[23],
-//         sharedScratches[21],
-//             ]
-//     },
-    
-//     {
-//     id: 1,
-//     gender: "male",    
-//     firstName: "Nadav",
-//     lastName: "Almagor",
-//     pw: "123",
-//     userName: "nadi",
-//     email: "nadav@gmail.com",
-//     birthDate: new Date,
-//     photos: ['../images/male4.jpg', "../images/male5.jpg", '../images/male6.jpg'],
-//     scratches: [
-//         sharedScratches[1],
-//         sharedScratches[3],
-//         sharedScratches[4],
-//         sharedScratches[5],
-//         sharedScratches[0],
-//         sharedScratches[20],
-//         sharedScratches[21],
-//         sharedScratches[22],
-//         sharedScratches[23],
-//         ]
-//     },
-    
-//     {
-//     id: 2,
-//     gender: "female",
-//     firstName: "lior",
-//     lastName: "sela",
-//     pw: "123",
-//     userName: "lili",
-//     email: "lior@gmail.com",
-//     birthDate: new Date,
-//     photos: ["../images/female.jpg", "../images/female1.jpg", '../images/female2.jpg'],
-//     scratches: [
-//         sharedScratches[21],
-//         sharedScratches[23],
-//         sharedScratches[13],
-//         sharedScratches[11],
-//         sharedScratches[12],
-//         sharedScratches[6],
-//         sharedScratches[16],
-//         sharedScratches[2],
-//         sharedScratches[18],
-//         sharedScratches[19],
-//         sharedScratches[15],
-//         ]
-//     },
-//     {
-//     id: 3,
-//     gender: "female",
-//     firstName: "מיטל",
-//     lastName: "כהן",
-//     pw: "123",
-//     userName: "meitalush",
-//     email: "meital@gmail.com",
-//     birthDate: new Date,
-//     photos: ["../images/female3.jpg", "../images/female4.jpg", '../images/female5.jpg'],
-//     scratches: [
-//         sharedScratches[0],
-//         sharedScratches[4],
-//         sharedScratches[5],
-//         sharedScratches[1],
-//         sharedScratches[3],
-//         sharedScratches[2],
-//         sharedScratches[13],
-//         sharedScratches[14],
-//         sharedScratches[15],
-//         sharedScratches[16],
-//         sharedScratches[4],
-//         ]
-//     },
-//     {
-//         id: 4,
-//         gender: "male",
-//         firstName: "רון",
-//         lastName: "שדה",
-//         pw: "123",
-//         userName: "רונצ'ו",
-//         email: "ron@gmail.com",
-//         birthDate: new Date,
-//         photos: ['../images/male8.jpg', "../images/male6.jpg", "../images/male7.jpg"],
-//         scratches: [
-//             sharedScratches[23],
-//             sharedScratches[22],
-//             sharedScratches[21],
-//             sharedScratches[20],
-//             sharedScratches[1],
-//             sharedScratches[10],
-//             sharedScratches[13],
-//             sharedScratches[12],
-//             sharedScratches[15],
-//             sharedScratches[14],
-//                 ]
-//         },
-        
-//         {
-//         id: 5,
-//         gender: "male",    
-//         firstName: "שי",
-//         lastName: "אלמגור",
-//         pw: "123",
-//         userName: "שייצ'וק",
-//         email: "shai@gmail.com",
-//         birthDate: new Date,
-//         photos: ['../images/male9.jpg', "../images/male10.jpg", '../images/male8.jpg'],
-//         scratches: [
-//             sharedScratches[1],
-//             sharedScratches[3],
-//             sharedScratches[4],
-//             sharedScratches[5],
-//             sharedScratches[9],
-//             sharedScratches[7],
-//             sharedScratches[8],
-//             sharedScratches[13],
-//             sharedScratches[12],
-//             sharedScratches[15],
-//             sharedScratches[14],
-//             ]
-//         },
-        
-//         {
-//         id: 6,
-//         gender: "female",
-//         firstName: "Dana",
-//         lastName: "galon",
-//         pw: "123",
-//         userName: "danush",
-//         email: "dana@gmail.com",
-//         birthDate: new Date,
-//         photos: ["../images/female.jpg", "../images/female1.jpg", '../images/female2.jpg'],
-//         scratches: [
-//             sharedScratches[0],
-//             sharedScratches[4],
-//             sharedScratches[9],
-//             sharedScratches[1],
-//             sharedScratches[3],
-//             sharedScratches[2],
-//             sharedScratches[7],
-//             sharedScratches[8],
-//             sharedScratches[12],
-//             sharedScratches[22],
-//             sharedScratches[15],
-//             sharedScratches[17],
-//             sharedScratches[20],
-//             ]
-//         },
-//         {
-//         id: 7,
-//         gender: "female",
-//         firstName: "תרצה",
-//         lastName: "גלאון",
-//         pw: "123",
-//         userName: "tirta123",
-//         email: "rirtza@gmail.com",
-//         birthDate: new Date,
-//         photos: ["../images/female6.jpg", "../images/female4.jpg", '../images/female5.jpg'],
-//         scratches: [
-//             sharedScratches[9],
-//             sharedScratches[4],
-//             sharedScratches[5],
-//             sharedScratches[1],
-//             sharedScratches[7],
-//             sharedScratches[8],
-//             sharedScratches[3],
-//             sharedScratches[11],
-//             sharedScratches[19],
-//             sharedScratches[18],
-//             sharedScratches[13],
-//             sharedScratches[15],
-//             sharedScratches[14],
-//             ]
-//         },
-// ] 
-// // alert(typeof(profiles))
-// localStorage.setItem('profiles',JSON.stringify(profiles))
-
 
 
 //SCRATCH FUNCTIONS//
-
-function getAllScratches(profiles) {
-    console.log('getAllScratches', profiles)
+/* get all scratches from list of profiles object list */
+function getAllScratches(profilesList) {
+    console.log('getAllScratches', profilesList)
     var group = []
-    for(i = 0; i<profiles.length; i++){
-        for (j=0; j<profiles[i].scratches.length; j++){
-            group.push(profiles[i].scratches[j])
+    for(i = 0; i<profilesList.length; i++){
+        for (j=0; j<profilesList[i].scratches.length; j++){
+            group.push(profilesList[i].scratches[j])
         }
     }
     console.log('all scratches', group)
     return group
 }
-// var scratches = getAllScratches(profiles)
-// localStorage.setItem('scratches',JSON.stringify(scratches))
 
+
+/* get all UNIQUE scratches from list of profiles object list */
 function getUniqueScratches(profileList) {
     var idgroup = []
     var group = []
@@ -339,9 +107,8 @@ function getUniqueScratches(profileList) {
     // console.log('unique scratches', group)
     return group
 }
-// var uniqueScratches = getUniqueScratches(profiles)
-// localStorage.setItem('uniqueScratches',JSON.stringify(uniqueScratches))
 
+/* find a scratch object in a scratch object list from an HTML id ("sc" + id)*/
 function findScratchByHtmlID(scratchList, id){
     var id = GetNum(id)
     // alert( id);
@@ -356,6 +123,7 @@ function findScratchByHtmlID(scratchList, id){
     }
 }
 
+/* find a scratch object in a scratch object list from an regular id */
 function findScratchByID(scratchList, id){
     // alert(scratchList.length)
     for (i = 0; i<scratchList.length; i++){
@@ -369,7 +137,7 @@ function findScratchByID(scratchList, id){
     }
 }
  
-
+/* find all scratches ini the list that have this keyword in it's header  */
 function findScratchMatchByKeywordHeader(list, value){
     // console.log(value)
     var matches = []
@@ -385,33 +153,32 @@ function findScratchMatchByKeywordHeader(list, value){
     return matches;
 }
 
-
+/* show number of likes and dislikes on the HTML "scratch buttons"  */
 function showButtonNums(scratch){
     document.getElementById('canliveSpan').innerHTML = scratch.likes
     document.getElementById('NopeSpan').innerHTML = scratch.dislikes
-
 }
 
+/* initilize scratch button onclick functions */
 function scratchButtons(profiles, scratches){
     document.getElementById('havetooButton').onclick = function(){
-        let scratch = scratches[Math.floor(Math.random()*sharedScratches.length)]
-        
+        let scratch = scratches[Math.floor(Math.random()*scratches.length)]
+        localStorage.setItem('selectedScratch',JSON.stringify(scratch));
         fillPageContent(scratch,profiles)
     }
     document.getElementById('canliveButton').onclick = function(){
-        let scratch = scratches[Math.floor(Math.random()*sharedScratches.length)]
-        
+        let scratch = scratches[Math.floor(Math.random()*scratches.length)]
+        localStorage.setItem('selectedScratch',JSON.stringify(scratch));
         fillPageContent(scratch,profiles)
     }
     document.getElementById('NopeButton').onclick = function(){
-        let scratch = scratches[Math.floor(Math.random()*sharedScratches.length)]
-        
+        let scratch = scratches[Math.floor(Math.random()*scratches.length)]
+        localStorage.setItem('selectedScratch',JSON.stringify(scratch));
         fillPageContent(scratch,profiles)
     }
 }
 
-
-
+/* find all scratches in the list that have this value type */
 function findScratchMatchByType(list, value){
     // console.log(value)
     var matches = []
@@ -426,6 +193,7 @@ function findScratchMatchByType(list, value){
     return matches;
 }
 
+/* find all scratches in the list that have this value subtype */
 function findScratchMatchBySubtype(list, value){
     console.log(value)
     var matches = []
@@ -440,9 +208,10 @@ function findScratchMatchBySubtype(list, value){
     return matches;
 }
 
-function scratchPercentage(scratch, list){
-    console.log('scratchPercentage', list)
-    var allScratches = getAllScratches(list);
+/* caculate the percentage this scratch is from the scrtach list */
+function scratchPercentage(scratch, scratchList){
+    console.log('scratchPercentage', scratchList)
+    var allScratches = getAllScratches(scratchList);
     console.log('allscratches', allScratches)
     // alert(allScratches.length)
     var length = allScratches.length
@@ -456,12 +225,14 @@ function scratchPercentage(scratch, list){
     return scratchPerc
 }
 
+/* show the stat in this target element html */
 function showStat(stat, targetElement){
     document.getElementById(targetElement).innerHTML = stat 
     // console.log(length, scratchAcurrences);
     // console.log(scratchPerc)
 }
 
+/* show all scratch stats in scratchbox */
 function showScratchStats(scratch, profiles){
     console.log('showScratchStats', profiles)
     let scratchPercent = scratchPercentage(scratch, profiles);
@@ -486,7 +257,7 @@ function showScratchStats(scratch, profiles){
 
 
 //PROFILEFUNCTIONS
-
+/* returns a list of profile objects based on genfer */
 function genderProfiles(gender, profiles){
     var group = []
     for (i = 0; i<profiles.length; i++){
@@ -498,6 +269,7 @@ function genderProfiles(gender, profiles){
         return group;
 }
 
+/* show all profiles in the list in the HTML target element */
 function showProfiles(list, targetElement){
     // alert(typeof(targetElement))
     var element = document.getElementById(targetElement);
@@ -506,19 +278,9 @@ function showProfiles(list, targetElement){
     for (i = 0; i < list.length; i++){
         
         var details = [list[i].gender, list[i].firstName, list[i].lastName, list[i].userName, list[i].email, list[i].birthDate]
-        // var today =  Date.now;
-        // console.log(today)
-        // var age = today - list[i].birthDate
-        // console.log(list[i].birthDate)
         var userName = list[i].userName;
         var div = document.createElement('div');
-        // console.log(list[i].id);
-        // console.log(div);
         div.setAttribute('id', list[i].id);
-        // div.onclick = function(){
-        //     alert(div.id)
-        //     console.log(div)
-        // }
         var a = document.createElement('a');
         a.setAttribute('href', 'http://localhost:3000/HTML/profile.html');
         a.innerHTML = userName ;
@@ -528,17 +290,19 @@ function showProfiles(list, targetElement){
     }
 }
 
-function showRandomProfilePics(numPics){}
 
-function showProfilesWithScratch(id, profiles){
+function showRandomProfilePics(numPics, profileList){}
+
+/* show all profiles with this scratch ID  */
+function showProfilesWithScratch(id, profiles, targetElement){
     console.log('showProfilesWithScratch', profiles)
     var group = findProfilesWithScratchID(id, profiles);
     
-    showProfiles(group, 'relatedprofilesType');
+    showProfiles(group, targetElement);
     return group;
 }
 
-
+/* finds all profiles with this scratch object  */
 function findProfilesByScratch(profileList, scratch){
     var group = []
     for (i = 0; i<profileList.length; i++){
@@ -553,9 +317,8 @@ function findProfilesByScratch(profileList, scratch){
     console.log('profileswithscratch', group);
     return group;
 }
-// console.log(profiles)
-// findProfilesByScratch(profiles, scratches[11])
 
+/* finds all profiles with this scratch ID  */
 function findProfilesWithScratchID(id, profileList){
     console.log('findProfilesWithScratchID', profileList)
     let result = []
@@ -578,6 +341,7 @@ function findProfilesWithScratchID(id, profileList){
     // console.log(group)
 }
 
+/* returns the profile object with this ID */
 function findProfilesByID(profileList, id){
     
     for (i = 0; i<profileList.length; i++){
@@ -585,13 +349,13 @@ function findProfilesByID(profileList, id){
         if (profileList[i].id == id){
             // alert(profileList[i].firstName)
             return profileList[i];
-            break
+            
         }
         
     }
 }
 
-
+/* returns a list of common scratch IDs between two profiles */
 function findScratchMatchesBetweenProfiles(profile1, profile2){
     console.log(profile1.scratches)
     console.log(profile2.scratches)
@@ -599,6 +363,7 @@ function findScratchMatchesBetweenProfiles(profile1, profile2){
     let profile1scratchIds = []
     let profile2scratchIds = []
     let matches = 0
+    let scratchIDmatches = []
     // console.log(profile2.scratches.length)
     for (i=0; i<profile1.scratches.length; i++){
         // console.log[i]
@@ -606,20 +371,26 @@ function findScratchMatchesBetweenProfiles(profile1, profile2){
         profile1scratchIds.push(profile1.scratches[i].id)
         for (j=0; j<profile2.scratches.length; j++){
             // profile2scratchIds.push(profile2.scratches[j].id)
-            if(profile2.scratches[j].id == id){
+            if(profile2.scratches[j]== id){
                 matches += 1
+                scratchIDmatches.push(profile2.scratches[j])
             }
         }
     }
     console.log(profile1scratchIds)
     console.log(profile2scratchIds)
     console.log(matches)
+    console.log(scratchIDmatches)
+    
+    scratchIDmatches.push(profile2.scratches[j])
+    return scratchIDmatches
 }
 
-// findScratchMatchesBetweenProfiles(profiles[0], profiles[5])
+
 
 //DISPLAY FUNCTIONS//
 
+/*   shows scratches from list in target element HTML*/
 function showScratches(list, targetElement){
     console.log('here', list)
     var element = document.getElementById(targetElement);
@@ -656,6 +427,7 @@ function showScratches(list, targetElement){
     // console.log(element)
 }
 
+/*   shows main scratch in designated elements*/
 function showScratch(scratchObj){
     var headerSource = document.getElementById('scratchHeader')
     headerSource.innerHTML = scratchObj.header;
@@ -664,18 +436,20 @@ function showScratch(scratchObj){
     return scratchObj
 }
 
+/* find and show all scratches in the list that have this scratche's type value in the target element */
+function showScratchesByType(scratch, scratchList, targetElement){
+    var group = findScratchMatchByType(scratchList, scratch.type);
+    showScratches(group, targetElement)
+}
 
-function showScratchesByType(scratch){
-    var group = findScratchMatchByType(scratches, scratch.type);
-    showScratches(group, 'relatedScratchesType')
+/* find and show all scratches in the list that have this scratche's sub type value in the target element */
+function showScratchesBySubType(scratch, scratchList, targetElement){
+    var group = findScratchMatchBySubtype(scratchList, scratch.subType);
+    showScratches(group, targetElement)
 }
 
 
-function showScratchesBySubType(scratch){
-    var group = findScratchMatchBySubtype(scratches, scratch.subType);
-    showScratches(group, 'relatedScratchesSubtype')
-}
-
+/* shows the type options from the list in the frop down menu from */
 function showSlelectTypes(){
     var element = document.getElementById("typeSelect")
     // alert(element)
@@ -688,7 +462,7 @@ function showSlelectTypes(){
     }
 }
 
-
+/* shows the sub type options from the list in the frop down menu from */
 function showSlelectSubTypes(){
     var element = document.getElementById("subTypeSelect")
     // alert(element)
@@ -699,6 +473,7 @@ function showSlelectSubTypes(){
     }
 }
 
+/* displays the profile full name in the target element */
 function displayFullName(profile, targetElement){
     // alert(profile.id);
     var fullName = document.getElementById(targetElement);
@@ -706,6 +481,7 @@ function displayFullName(profile, targetElement){
     
 }
 
+/* fills the carousell with 3 profiles pics */
 function fillCarousellPicFromProfile(profile){
     var car1 = document.getElementById('carouselImg1');
     car1.src = profile.photos[0]
@@ -715,6 +491,7 @@ function fillCarousellPicFromProfile(profile){
     car3.src = profile.photos[2]
 }
 
+/* fills a carousell in the target element with first picture of the profiles in the list */
 function fillCarousellPicFromProfileList(profileList, targetElement){
     var targetElement = document.getElementById(targetElement);
     for(i = 0; i < profileList.length; i++){
@@ -724,7 +501,7 @@ function fillCarousellPicFromProfileList(profileList, targetElement){
         a.setAttribute('href','http://localhost:3000/HTML/profile.html')
         div.appendChild(a)
         let img = document.createElement('img');
-        img.setAttribute('id',i)
+        img.setAttribute('id',profileList[i].id)
         img.setAttribute('src',profileList[i].photos[0]);
         img.setAttribute('alt','file not fount')
         img.setAttribute('class','d-block img-fluid')
@@ -740,14 +517,15 @@ function fillCarousellPicFromProfileList(profileList, targetElement){
     
 }
 
-
-
+/* fills the whole page with the scratch data and links */
 function fillPageContent(scratchObj, profiles){
     console.log('fillPageContent', profiles)
     var currentScratch = showScratch(scratchObj);
     var id = currentScratch.id;
     // alert(id);
-    var group = showProfilesWithScratch(id, profiles);
+    var group = findProfilesByScratch(profiles, scratchObj)
+    console.log(group)
+    fillCarousellPicFromProfileList(group, 'carousel-inner')
     linkToProfile(group);
     showButtonNums(scratchObj)
     showScratchStats(scratchObj, profiles)
@@ -757,7 +535,7 @@ function fillPageContent(scratchObj, profiles){
 
 //GENERAL FUNCTIONS
 
-
+/* get the value from form input */
 function getVariablesFromInput(id){
     // alert(id);
     var inputValue = document.getElementById(id).value;
@@ -765,24 +543,27 @@ function getVariablesFromInput(id){
     return inputValue;
 }
 
+/* takes a string and takes out the number from it */
 function GetNum(str) {
     var num = str.replace(/\D/g,'');
     return(num);
 }
 
-function fillInfo(source, info){
-    document.getElementById(source).innerHTML = info
+/* puts info in the target element ID */
+function fillInfo(targetElement, info){
+    document.getElementById(targetElement).innerHTML = info
 }
 
 //LINKS FUNCTIONS//
 
+/* sending the seleced profile object to local storage by cliking on ther links */
 function linkToProfile(list){
     console.log(list)
     for (i = 0; i<list.length; i++){
         // alert('profile'+i)
         document.getElementById(list[i].id).onclick = function(){
             var id  = $(this).attr("id")
-            // alert(id);
+            alert(id);
             var selectedProfile = findProfilesByID(list, id);
             localStorage.setItem('selectedProfile',JSON.stringify(selectedProfile));
             // console.log(profile);
@@ -790,7 +571,7 @@ function linkToProfile(list){
     }
 }
 
-
+/* sending the seleced scrtach object to local storage by cliking on ther links */
 function linkToScratch(scratchList, scratchPool){
     // alert(list.length)
     for (i = 0; i<scratchList.length; i++){
@@ -801,6 +582,7 @@ function linkToScratch(scratchList, scratchPool){
             // alert(selectedScratch.id)
             console.log(selectedScratch);
             localStorage.setItem('selectedScratch',JSON.stringify(selectedScratch));
+            alert(selectedScratch, "uploaded to local storage")
             return selectedScratch
         }
     }
@@ -832,7 +614,8 @@ if(window.location.href === "http://localhost:3000/index.html") {
         };  
 
         
-    document.getElementById('signUpButton').onclick = function(e){
+    
+        document.getElementById('signUpButton').onclick = function(e){
     
         // alert("here");
         var first = getVariablesFromInput('inputfirstName');
@@ -920,6 +703,7 @@ if(window.location.href === "http://localhost:3000/index.html") {
 
 }
 
+
 if(window.location.href === "http://localhost:3000/HTML/scratches.html") {
 
     var xhttp = new XMLHttpRequest();
@@ -930,7 +714,7 @@ if(window.location.href === "http://localhost:3000/HTML/scratches.html") {
             var profiles = response.profiles
             var scratches = response.scratches
             var selectedScratch = JSON.parse(localStorage.getItem('selectedScratch'))
-
+            console.log(selectedScratch, "from storage")
             showSlelectTypes();
 
             showSlelectSubTypes();
@@ -942,6 +726,7 @@ if(window.location.href === "http://localhost:3000/HTML/scratches.html") {
             scratchButtons(profiles, scratches)
 
     
+            
 
             document.getElementById('findScratchesButton').onclick = function(){
     
@@ -955,7 +740,6 @@ if(window.location.href === "http://localhost:3000/HTML/scratches.html") {
                 showScratches(matchesSubType, 'foundScratches')
                 linkToScratch(matchesSubType, scratches);
                 }
-
 
 
         };  
@@ -1005,7 +789,7 @@ if(window.location.href === "http://localhost:3000/HTML/profile.html") {
         console.log(scratchList);
 
         showScratches(scratchList, 'scratchesProfile');
-        linkToScratch(scratchList);
+        linkToScratch(scratchList, scratches);
         fillCarousellPicFromProfile(selectedProfile);
         let relatedProfiles = [];
         // console.log(profiles)

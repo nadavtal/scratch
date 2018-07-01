@@ -28,8 +28,8 @@ h4{
 }
 
 #scratches{
-    /* border: 1px solid rebeccapurple; */
-    /* text-align: right;  */
+    overflow: scroll;
+    height: 500px;
 }
 
 
