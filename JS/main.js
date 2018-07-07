@@ -137,6 +137,24 @@ function findScratchByID(scratchList, id){
     }
 }
  
+function findScratchesByIdList(scratchList, idList){
+    console.log('findScratchesByIdList', idList)
+    let group = []
+    for (j = 0; j < idList.length; j++){
+        for (i = 0; i<scratchList.length; i++){
+            // console.log(profileList[i].id);
+            // console.log(scratchList[i].id)
+            if (scratchList[i].id == idList[j]){
+                group.push(scratchList[i])
+                
+                
+            }   
+        }
+
+    }
+    return group
+}
+
 /* find all scratches ini the list that have this keyword in it's header  */
 function findScratchMatchByKeywordHeader(list, value){
     // console.log(value)
@@ -392,7 +410,7 @@ function findScratchMatchesBetweenProfiles(profile1, profile2){
 
 /*   shows scratches from list in target element HTML*/
 function showScratches(list, targetElement){
-    console.log('here', list)
+    console.log('showScracthes', list)
     var element = document.getElementById(targetElement);
     // alert(element)
     element.innerHTML = '';
@@ -563,7 +581,7 @@ function linkToProfile(list){
         // alert('profile'+i)
         document.getElementById(list[i].id).onclick = function(){
             var id  = $(this).attr("id")
-            alert(id);
+            // alert(id);
             var selectedProfile = findProfilesByID(list, id);
             localStorage.setItem('selectedProfile',JSON.stringify(selectedProfile));
             // console.log(profile);
@@ -580,9 +598,9 @@ function linkToScratch(scratchList, scratchPool){
             var id  = $(this).attr("id");
             let selectedScratch = findScratchByHtmlID(scratchPool,id)
             // alert(selectedScratch.id)
-            console.log(selectedScratch);
+            // console.log(selectedScratch);
             localStorage.setItem('selectedScratch',JSON.stringify(selectedScratch));
-            alert(selectedScratch, "uploaded to local storage")
+            // alert(selectedScratch, "uploaded to local storage")
             return selectedScratch
         }
     }
@@ -590,7 +608,7 @@ function linkToScratch(scratchList, scratchPool){
 
 
 
-if(window.location.href === "http://localhost:3000/index.html") {
+if(window.location.href === "http://localhost:3000/") {
     
 
     var xhttp = new XMLHttpRequest();
@@ -601,15 +619,10 @@ if(window.location.href === "http://localhost:3000/index.html") {
         var response = JSON.parse(xhttp.responseText);
         var profiles = response.profiles
         var scratches = response.scratches
-        // console.log(scratches)
-        // localStorage.setItem('scratches',JSON.stringify(scratches))
-        // localStorage.setItem('profiles',JSON.stringify(profiles))
         
-        document.getElementById('jsondata').innerHTML = response.profiles[0].firstName
         fillCarousellPicFromProfileList(profiles, 'carousel-inner')
         linkToProfile(profiles);
         showScratches(scratches, "scratches");
-
         linkToScratch(scratches, scratches);
         };  
 
@@ -617,82 +630,78 @@ if(window.location.href === "http://localhost:3000/index.html") {
     
         document.getElementById('signUpButton').onclick = function(e){
     
-        // alert("here");
-        var first = getVariablesFromInput('inputfirstName');
-        var last = getVariablesFromInput('inputslastName');
-        var userName = getVariablesFromInput('inputUserName');
-        var email = getVariablesFromInput('inputEmail');
-        var pw = getVariablesFromInput('inputPassword3');
-        var newProfile = new Profile(first, last, userName, email, pw);
-        // alert("here2");
-        //alert(newProfile);
-        
-        // profiles.push(newProfile);
-        // localStorage.setItem('user',JSON.stringify(newProfile));
-        // console.table(profiles);/ 
-        
-        
-    }
-    
-    
-    document.getElementById('loginButton').onclick = function(e){
-        // e.preventDefault();
-        var email = getVariablesFromInput('loginEmail');
-        var pw = getVariablesFromInput('loginPw');
-    
-        if (email === ''){
-            alert("please enter email")
+            e.preventDefault()
+            var first = getVariablesFromInput('inputfirstName');
+            var last = getVariablesFromInput('inputslastName');
+            var userName = getVariablesFromInput('inputUserName');
+            var email = getVariablesFromInput('inputEmail');
+            var pw = getVariablesFromInput('inputPassword3');
+            var newProfile = new Profile(first, last, userName, email, pw);
+                
+            
         }
-        for (i = 0; i < profiles.length; i++){
-            alert(profiles[i].email);
-            if (email === profiles[i].email){
-                // alert(users[i].email)
-                if (pw === profiles[i].pw){
-                    // alert(users[i].pw)
-                    var profile = profiles[i]
-                    break
-                }
-                else{
-                    alert("pass word doesnt match the email")
+    
+    
+        document.getElementById('loginButton').onclick = function(e){
+            // e.preventDefault();
+            var email = getVariablesFromInput('loginEmail');
+            var pw = getVariablesFromInput('loginPw');
+        
+            if (email === ''){
+                alert("please enter email")
+            }
+            for (i = 0; i < profiles.length; i++){
+                alert(profiles[i].email);
+                if (email === profiles[i].email){
+                    // alert(users[i].email)
+                    if (pw === profiles[i].pw){
+                        // alert(users[i].pw)
+                        var profile = profiles[i]
+                        break
                     }
-            }else{
-                alert("Email doesn't exist")
-                }
+                    else{
+                        alert("pass word doesnt match the email")
+                        }
+                }else{
+                    alert("Email doesn't exist")
+                    }
+            }
+            alert(profile.scratches);
+            // alert(profile.firstName);
+            localStorage.setItem('profile',JSON.stringify(profile));
+        
         }
-        alert(profile.scratches);
-        // alert(profile.firstName);
-        localStorage.setItem('profile',JSON.stringify(profile));
-       
-    }
     
     
-    document.getElementById("maleButton").onclick = function(){
-        var maleProfiles = genderProfiles('male', profiles);
-        showProfiles(maleProfiles, 'profiles')
-    }
+    // document.getElementById("maleButton").onclick = function(){
+    //     var maleProfiles = genderProfiles('male', profiles);
+    //     showProfiles(maleProfiles, 'profiles')
+    // }
     
-    document.getElementById("femaleButton").onclick = function(){
-        var femaleProfiles = genderProfiles('female', profiles);
-        showProfiles(femaleProfiles, 'profiles')
-    }
+    // document.getElementById("femaleButton").onclick = function(){
+    //     var femaleProfiles = genderProfiles('female', profiles);
+    //     showProfiles(femaleProfiles, 'profiles')
+    // }
     
     document.getElementById("maleScrachButton").onclick = function(){
         var maleProfiles = genderProfiles('male', profiles);
-        // console.log(maleProfiles);
-        var maleScratches = getAllScratches(maleProfiles);
-        // console.log(maleScratches);
-        // console.log(scratches);
-        showScratches(maleScratches, "scratches");
+        
+        var maleScratchesIds = getAllScratches(maleProfiles);
+        let scratchesObjectList = findScratchesByIdList(scratches, maleScratchesIds)
+        
+        showScratches(scratchesObjectList, "scratches");
+        linkToScratch(scratchesObjectList, scratches);
     }
     
     
     document.getElementById("femaleScrachButton").onclick = function(){
-        var femaleProfiles = genderProfiles('female');
-        // console.log(maleProfiles);
-        var femaleScratches = getAllScratches(femaleProfiles);
-        // console.log(maleScratches);
-        // console.log(scratches);
-        showScratches(femaleScratches, "scratches");
+        let femaleProfiles = genderProfiles('female', profiles);
+        
+        let femaleScratchesIds = getAllScratches(femaleProfiles);
+        
+        let scratchesObjectList = findScratchesByIdList(scratches, femaleScratchesIds)
+        showScratches(scratchesObjectList, "scratches");
+        linkToScratch(scratchesObjectList, scratches);
     }
 
 
